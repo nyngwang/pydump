@@ -1,14 +1,17 @@
 # Yup, we need to creat it outside
 # adv1: aggregate many things into one
 import textwrap
+from dataclasses import dataclass
+from typing import (
+    Any
+)
 
 
+@dataclass
 class Item:
-
-    def __init__(self, item, price, quantity) -> None:
-        self.item = item
-        self.price = price
-        self.quantity = quantity
+    item: Any
+    price: Any
+    quantity: Any
 
     def calculate_total_price(self):
         return self.price * self.quantity
