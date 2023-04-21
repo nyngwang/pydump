@@ -2,7 +2,11 @@
 # Yup, we need to creat it outside
 
 class Item:
-    pass
+
+    def calculate_total_price(self):
+        return self.price * self.quantity
+
+
 
 
 def create_my_class():
@@ -11,13 +15,12 @@ def create_my_class():
     item1.type = 'Phone'
     item1.price = 1000
     item1.quantity = 10
-    item1.total_price = item1.price * item1.quantity
     
     print(item1)
     print(item1.type)
     print(item1.price)
     print(item1.quantity)
-    print(item1.total_price)
+    print(item1.calculate_total_price())
 
 
 
