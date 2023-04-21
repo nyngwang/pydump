@@ -12,6 +12,18 @@ class Item:
     def calculate_total_price(self):
         return self.price * self.quantity
 
+    def __str__(self) -> str:
+
+
+        return """
+Hi, thanks for purchasing {}!
+quantity: {}
+total price: {}
+        """.format(
+            self.item,
+            self.quantity,
+            self.calculate_total_price()
+        )
 
 
 
