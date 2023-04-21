@@ -3,15 +3,15 @@
 import textwrap
 from dataclasses import dataclass
 from typing import (
-    Any
+    Any,
 )
 
 
 @dataclass
 class Item:
-    item: Any
-    price: Any
-    quantity: Any
+    item: str
+    price: int
+    quantity: int
 
     def calculate_total_price(self):
         return self.price * self.quantity
