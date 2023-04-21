@@ -1,5 +1,6 @@
 # Yup, we need to creat it outside
 # adv1: aggregate many things into one
+import textwrap
 
 
 class Item:
@@ -14,12 +15,13 @@ class Item:
 
     def __str__(self) -> str:
 
+        message = """
+            Hi, thanks for purchasing {}!
+            quantity: {}
+            total price: {}
+        """
 
-        return """
-Hi, thanks for purchasing {}!
-quantity: {}
-total price: {}
-        """.format(
+        return textwrap.dedent(message).format(
             self.item,
             self.quantity,
             self.calculate_total_price()
