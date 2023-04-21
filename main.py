@@ -8,6 +8,6 @@ from pydump.courses import (
 if __name__ == '__main__':
     # hi.say_hello()
 
-    no_oop.without_oop()
+    # no_oop.without_oop()
     yes_oop.create_my_class()
 
