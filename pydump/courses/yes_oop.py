@@ -2,8 +2,10 @@
 # adv1: aggregate many things into one
 import textwrap
 from dataclasses import dataclass
+from typeguard import 
 from typing import (
     Any,
+    TypeGuard
 )
 
 
@@ -34,7 +36,7 @@ class Item:
 
 def create_my_class():
 
-    item1 = Item('Phone', 1000, 4)
+    item1 = Item('Phone', "1000", 4)
     
     print(item1)
     print(item1.price)

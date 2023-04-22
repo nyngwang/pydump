@@ -1,0 +1,9 @@
+{
+  "exclude": [
+    "**/__pycache__",
+    "**/.suave"
+  ],
+
+  "venvPath": "/Users/ningwang/miniforge3/envs",
+  "venv": "main"
+}

@@ -13,9 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +13 main.py
-badd +1 pydump/test/hi.py
-badd +48 .neoprompt.lua
+badd +3 main.py
+badd +1 .neoprompt.lua
+badd +5 ~/GitHub/pydump/pydump/courses/yes_oop.py
+badd +1 term://~/GitHub/pydump//34721:/bin/zsh
+badd +3 ~/GitHub/pydump/pyrightconfig.json
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -29,6 +31,10 @@ vsplit
 wincmd _ | wincmd |
 vsplit
 2wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd w
 wincmd _ | wincmd |
 split
@@ -46,7 +52,6 @@ set winminwidth=0
 set winwidth=1
 wincmd =
 argglobal
-balt ~/.config/zsh/.zsh_functions/watch
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <buffer> <expr> <BS> v:lua.MPairs.autopairs_bs()
@@ -110,7 +115,7 @@ setlocal imsearch=-1
 setlocal include=
 setlocal includeexpr=tr(v:fname,'.','/')
 setlocal indentexpr=GetLuaIndent()
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0=end,0=until
+setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0=end,0=until
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255,-
 setlocal keywordprg=
@@ -152,7 +157,7 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=noplainbuffer
 setlocal statuscolumn=%!v:lua.StatusCol()
-setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ .neoprompt.lua\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconLua_command#\ %#lualine_c_normal#\ lua\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 90%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ 48:4\ \ 
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
 setlocal suffixesadd=.lua
 setlocal noswapfile
 setlocal synmaxcol=300
@@ -181,28 +186,22 @@ setlocal wrapmargin=0
 silent! normal! zE
 7,8fold
 5,10fold
-14,27fold
-12,29fold
-33,47fold
-31,49fold
-4,50fold
-3,51fold
-2,52fold
+14,32fold
+12,34fold
+38,39fold
+36,41fold
+45,63fold
+43,65fold
+4,66fold
+3,67fold
+2,68fold
 let &fdl = &fdl
-2
-normal! zo
-3
-normal! zo
-4
-normal! zo
-31
-normal! zo
-let s:l = 48 - ((33 * winheight(0) + 26) / 52)
+let s:l = 19 - ((18 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 48
-normal! 04|
+keepjumps 19
+normal! 03|
 wincmd w
 argglobal
 if bufexists(fnamemodify("main.py", ":p")) | buffer main.py | else | edit main.py | endif
@@ -315,7 +314,7 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=noplainbuffer
 setlocal statuscolumn=%!v:lua.StatusCol()
-setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ .neoprompt.lua\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconLua_command#\ %#lualine_c_normal#\ lua\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 90%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ 48:4\ \ 
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
 setlocal suffixesadd=.py
 setlocal noswapfile
 setlocal synmaxcol=300
@@ -342,156 +341,22 @@ setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-17,19fold
+2,4fold
+8,12fold
 let &fdl = &fdl
-let s:l = 13 - ((12 * winheight(0) + 13) / 26)
+let s:l = 3 - ((2 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 13
-normal! 0
+keepjumps 3
+normal! 011|
 wincmd w
 argglobal
-enew
-balt term://~/GitHub/pydump//89096:/bin/zsh
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <expr> <BS> v:lua.MPairs.autopairs_bs()
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal cinscopedecls=public,protected,private
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=
-setlocal complete=.,w,b,u,t
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != ''
-setlocal filetype=
-endif
-setlocal fillchars=diff:/,fold:\ ,foldclose:󰥹,foldopen:󰦥,foldsep:
-setlocal nofixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=99
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=v:lua.require'ufo.main'.foldtext()
-setlocal formatexpr=
-setlocal formatoptions=qj1ct
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispoptions=
-setlocal lispwords=
-setlocal nolist
-setlocal listchars=
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,hex
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal scrollback=-1
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=2
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=yes
-setlocal nosmartindent
-setlocal softtabstop=2
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statuscolumn=%!v:lua.StatusCol()
-setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ .neoprompt.lua\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconLua_command#\ %#lualine_c_normal#\ lua\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 90%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ 48:4\ \ 
-setlocal suffixesadd=
-setlocal noswapfile
-setlocal synmaxcol=300
-if &syntax != ''
-setlocal syntax=
-endif
-setlocal tagfunc=
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal thesaurusfunc=
-setlocal undofile
-setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
-setlocal virtualedit=
-setlocal winbar=
-setlocal winblend=0
-setlocal winhighlight=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal nowrap
-setlocal wrapmargin=0
-wincmd w
-argglobal
-if bufexists(fnamemodify("pydump/test/hi.py", ":p")) | buffer pydump/test/hi.py | else | edit pydump/test/hi.py | endif
+if bufexists(fnamemodify("~/GitHub/pydump/pydump/courses/yes_oop.py", ":p")) | buffer ~/GitHub/pydump/pydump/courses/yes_oop.py | else | edit ~/GitHub/pydump/pydump/courses/yes_oop.py | endif
 if &buftype ==# 'terminal'
-  silent file pydump/test/hi.py
+  silent file ~/GitHub/pydump/pydump/courses/yes_oop.py
 endif
-balt main.py
+balt term://~/GitHub/pydump//51490:/bin/zsh
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <buffer> <expr> <BS> v:lua.MPairs.autopairs_bs()
@@ -516,8 +381,8 @@ setlocal colorcolumn=
 setlocal comments=b:#,fb:-
 setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,t
-setlocal concealcursor=n
-setlocal conceallevel=3
+setlocal concealcursor=
+setlocal conceallevel=0
 setlocal completefunc=
 setlocal nocopyindent
 setlocal nocursorbind
@@ -546,7 +411,7 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=v:lua.require'ufo.main'.foldtext()
 setlocal formatexpr=
-setlocal formatoptions=tqj1c
+setlocal formatoptions=1tcqj
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal formatprg=
 setlocal grepprg=
@@ -597,7 +462,7 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=noplainbuffer
 setlocal statuscolumn=%!v:lua.StatusCol()
-setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ .neoprompt.lua\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconLua_command#\ %#lualine_c_normal#\ lua\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 90%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ 48:4\ \ 
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
 setlocal suffixesadd=.py
 setlocal noswapfile
 setlocal synmaxcol=300
@@ -616,7 +481,7 @@ setlocal undolevels=-123456
 setlocal varsofttabstop=
 setlocal vartabstop=
 setlocal virtualedit=
-setlocal winbar=\ hi.py\ \ 
+setlocal winbar=\ yes_oop.py\ \ 
 setlocal winblend=0
 setlocal winhighlight=
 setlocal nowinfixheight
@@ -624,7 +489,307 @@ setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-4,5fold
+6,8fold
+18,19fold
+23,26fold
+29,32fold
+21,33fold
+13,33fold
+37,44fold
+let &fdl = &fdl
+let s:l = 5 - ((4 * winheight(0) + 12) / 24)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 5
+normal! 022|
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/GitHub/pydump/pyrightconfig.json", ":p")) | buffer ~/GitHub/pydump/pyrightconfig.json | else | edit ~/GitHub/pydump/pyrightconfig.json | endif
+if &buftype ==# 'terminal'
+  silent file ~/GitHub/pydump/pyrightconfig.json
+endif
+balt pydump/test/hi.py
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <expr> <BS> v:lua.MPairs.autopairs_bs()
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal cinscopedecls=public,protected,private
+setlocal colorcolumn=
+setlocal comments=
+setlocal commentstring=
+setlocal complete=.,w,b,u,t
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'json'
+setlocal filetype=json
+endif
+setlocal fillchars=diff:/,fold:\ ,foldclose:󰥹,foldopen:󰦥,foldsep:
+setlocal nofixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=v:lua.require'ufo.main'.foldtext()
+setlocal formatexpr=v:lua.vim.lsp.formatexpr()
+setlocal formatoptions=1cqj
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJSONIndent(v:lnum)
+setlocal indentkeys=0{,0},0),0[,0],!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispoptions=
+setlocal lispwords=
+setlocal nolist
+setlocal listchars=
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=v:lua.vim.lsp.omnifunc
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal scrollback=-1
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=yes
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=noplainbuffer
+setlocal statuscolumn=%!v:lua.StatusCol()
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=300
+if &syntax != ''
+setlocal syntax=
+endif
+setlocal tagfunc=
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal thesaurusfunc=
+setlocal undofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal virtualedit=
+setlocal winbar=\ pyrightconfig.json\ \ %#NavicSeparator#\ %*\ 
+setlocal winblend=0
+setlocal winhighlight=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+2,4fold
+1,8fold
+let &fdl = &fdl
+let s:l = 3 - ((2 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 3
+normal! 015|
+wincmd w
+argglobal
+if bufexists(fnamemodify("term://~/GitHub/pydump//34721:/bin/zsh", ":p")) | buffer term://~/GitHub/pydump//34721:/bin/zsh | else | edit term://~/GitHub/pydump//34721:/bin/zsh | endif
+if &buftype ==# 'terminal'
+  silent file term://~/GitHub/pydump//34721:/bin/zsh
+endif
+balt .neoprompt.lua
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <expr> <BS> v:lua.MPairs.autopairs_bs()
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal cinscopedecls=public,protected,private
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=
+setlocal complete=.,w,b,u,t
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'neo-term'
+setlocal filetype=neo-term
+endif
+setlocal fillchars=diff:/,fold:\ ,foldclose:󰥹,foldopen:󰦥,foldsep:
+setlocal nofixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=v:lua.require'ufo.main'.foldtext()
+setlocal formatexpr=
+setlocal formatoptions=cqj1t
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispoptions=
+setlocal lispwords=
+setlocal nolist
+setlocal listchars=
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=bin,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal scrollback=10000
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=yes
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statuscolumn=
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=300
+if &syntax != 'neo-term'
+setlocal syntax=neo-term
+endif
+setlocal tagfunc=
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal thesaurusfunc=
+setlocal undofile
+setlocal undolevels=-1
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal virtualedit=
+setlocal winbar=
+setlocal winblend=0
+setlocal winhighlight=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
 let &fdl = &fdl
 let s:l = 1 - ((0 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
@@ -633,6 +798,7 @@ normal! zt
 keepjumps 1
 normal! 0
 wincmd w
+4wincmd w
 wincmd =
 tabnext
 argglobal
