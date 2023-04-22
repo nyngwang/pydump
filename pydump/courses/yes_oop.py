@@ -3,17 +3,18 @@
 import textwrap
 from dataclasses import dataclass
 # this one stop me a while.
-from typing import (
-    Any,
-    TypeGuard
-)
+# ok cool so `TypeGuard` from `typing` is just for type hinting.
+
+from typeguard import typechecked
 
 
 @dataclass
 class Item:
-    item: str
-    price: int
-    quantity: int
+    @typechecked
+    def __init__(self, item: str, price: int, quantity: int):
+        self.item = item
+        self.price = price
+        self.quantity = quantity
 
     def calculate_total_price(self):
         return self.price * self.quantity
@@ -36,7 +37,7 @@ class Item:
 
 def create_my_class():
 
-    item1 = Item('Phone', "1000", 4)
+    item1 = Item('Phone', 1000, 10)
     
     print(item1)
     print(item1.price)
