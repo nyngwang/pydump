@@ -39,21 +39,30 @@ class Item:
         )
 
 
+def _compare_before_after_attri_init(item):
+    # use `__dict__` to differentiate class/instance attributes
+    print()
+    msg_template_found_in = "is_rigid is found in class:{}, instance:{}"
+
+    print(msg_template_found_in.format(
+        'is_rigid' in  Item.__dict__.keys(),
+        'is_rigid' in  item.__dict__.keys()
+    ))
+
+    print('setting item.is_rigid is set')
+    item.is_rigid = True
+
+    print(msg_template_found_in.format(
+        'is_rigid' in  Item.__dict__.keys(),
+        'is_rigid' in  item.__dict__.keys()
+    ))
+
 
 def create_my_class():
 
     item1 = Item('Phone', 1000)
     
-    print(item1)
-
-    # use `__dict__` to differentiate class/instance attributes
-    print('is_rigid' in  Item.__dict__.keys())
-    print('is_rigid' in  item1.__dict__.keys())
-    item1.is_rigid = True
-    print('is_rigid' in  Item.__dict__.keys())
-    print('is_rigid' in  item1.__dict__.keys())
-    print(Item.is_rigid)
-    print(item1.is_rigid)
+    _compare_before_after_attri_init(item1)
 
 
 
