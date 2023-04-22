@@ -17,6 +17,7 @@ def print_python_version_info():
 
 
 def check_typeguard_issue():
+    # ref: https://github.com/microsoft/pyright/blob/main/docs/configuration.md
     if hasattr(typing, 'TypeGuard'):
         print('TypeGuard is available!')
     else:
