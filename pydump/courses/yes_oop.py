@@ -32,6 +32,14 @@ class Item:
             )
 
 
+    @staticmethod
+    def is_integer(num):
+        if isinstance(num, int) \
+            or isinstance(num, float) and num.is_integer():
+            return True
+        return False
+
+
     @typechecked
     def __init__(self, name: str, price: int, quantity=1):
         assert len(name) > 0, f"item should not have an empty name"
@@ -103,7 +111,7 @@ def create_my_class():
     Item.from_csv()
     Item.view_the_bag()
 
-    
+    print(Item.is_integer(1000.01))
 
 
 
