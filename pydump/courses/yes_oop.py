@@ -27,11 +27,10 @@ class Item:
         self.price = self.price * type(self).pay_rate
 
     def __str__(self) -> str:
-
-        message = """
+        message = """\
             Hi, thanks for purchasing {}!
             quantity: {}
-            total price: {}
+            total price: {}\
         """
 
         return textwrap.dedent(message).format(
@@ -44,9 +43,11 @@ class Item:
 def _compare_before_after_attri_init(item):
     # use `__dict__` to differentiate class/instance attributes
     print()
-    msg_template_found_in = "pay_rate is found in class:{}, instance:{}"
+    msg_template_found_in = """\
+        pay_rate is found in class:{}, instance:{}\
+    """
 
-    print(msg_template_found_in.format(
+    print(textwrap.dedent(msg_template_found_in).format(
         'pay_rate' in  Item.__dict__.keys(),
         'pay_rate' in  item.__dict__.keys()
     ))
@@ -54,20 +55,26 @@ def _compare_before_after_attri_init(item):
     print('setting item.pay_rate is set')
     item.pay_rate = 0.8
 
-    print(msg_template_found_in.format(
+    print(textwrap.dedent(msg_template_found_in).format(
         'pay_rate' in  Item.__dict__.keys(),
         'pay_rate' in  item.__dict__.keys()
     ))
+    print()
+
+
+def _get_discount_from_class_attr(item):
+    print("before discount:", item.calculate_total_price())
+    item.apply_discount()
+    print("after discount:", int(item.calculate_total_price()))
+    print()
 
 
 def create_my_class():
-
     item1 = Item('Phone', 1000)
+    print(item1)
     _compare_before_after_attri_init(item1)
+    _get_discount_from_class_attr(item1)
 
-    print(item1)
-    item1.apply_discount()
-    print(item1)
     
 
 
