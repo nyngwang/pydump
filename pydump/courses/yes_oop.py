@@ -64,10 +64,11 @@ class Item:
 
     def __repr__(self) -> str:
         message = """\
-            Item("{}", {}, {})\
+            {}("{}", {}, {})\
         """
 
         return textwrap.dedent(message).format(
+            self.__class__.__name__,
             self.name,
             self.quantity,
             self.calculate_total_price()
@@ -113,6 +114,6 @@ def create_my_class():
 
     print(Item.is_integer(1000.01))
 
-
+    print()
 
 
