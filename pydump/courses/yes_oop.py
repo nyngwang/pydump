@@ -37,11 +37,9 @@ class Item:
     def apply_discount(self):
         self.price = self.price * type(self).pay_rate
 
-    def __str__(self) -> str:
+    def __repr__(self) -> str:
         message = """\
-            Hi, thanks for purchasing {}!
-            quantity: {}
-            total price: {}\
+            Item("{}", {}, {})\
         """
 
         return textwrap.dedent(message).format(
@@ -82,7 +80,6 @@ def _get_discount_from_class_attr(item):
 
 def create_my_class():
     item1 = Item('Phone', 1000)
-    print(item1)
     _compare_before_after_attri_init(item1)
     _get_discount_from_class_attr(item1)
 

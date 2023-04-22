@@ -22,7 +22,6 @@ def check_typeguard_issue():
         print('TypeGuard is available!')
     else:
         print('TypeGuard is not available.')
-    print()
 
 
 def all():
