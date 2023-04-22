@@ -6,8 +6,11 @@ import textwrap # TIL: built-in
 
 
 # NOTE: class is better to be created outside function.
-@dataclass
 class Item:
+    # This will be neither a class/instance attribute
+    # if you don't provide a default value
+    is_rigid: bool = False
+
     @typechecked
     def __init__(self, item: str, price: int, quantity=0):
         assert len(item) > 0, f"item should not have an empty name"
@@ -42,9 +45,16 @@ def create_my_class():
     item1 = Item('Phone', 1000)
     
     print(item1)
-    print(item1.price)
-    print(item1.quantity)
-    print(item1.calculate_total_price())
+
+    # use `__dict__` to differentiate class/instance attributes
+    print('is_rigid' in  Item.__dict__.keys())
+    print('is_rigid' in  item1.__dict__.keys())
+    item1.is_rigid = True
+    print('is_rigid' in  Item.__dict__.keys())
+    print('is_rigid' in  item1.__dict__.keys())
+    print(Item.is_rigid)
+    print(item1.is_rigid)
+
 
 
 
