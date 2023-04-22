@@ -9,7 +9,7 @@ import textwrap # TIL: built-in
 @dataclass
 class Item:
     @typechecked
-    def __init__(self, item: str, price: int, quantity: int):
+    def __init__(self, item: str, price: int, quantity=0):
         assert len(item) > 0, f"item should not have an empty name"
         assert price > 0, f"price {price} should be positive"
         assert quantity >= 0, f"quantity {quantity} should not be negative"
@@ -39,7 +39,7 @@ class Item:
 
 def create_my_class():
 
-    item1 = Item('Phone', 1000, 10)
+    item1 = Item('Phone', 1000)
     
     print(item1)
     print(item1.price)
