@@ -10,6 +10,10 @@ import textwrap # TIL: built-in
 class Item:
     @typechecked
     def __init__(self, item: str, price: int, quantity: int):
+        assert len(item) > 0, f"item should not have an empty name"
+        assert price > 0, f"price {price} should be positive"
+        assert quantity >= 0, f"quantity {quantity} should not be negative"
+
         self.item = item
         self.price = price
         self.quantity = quantity
