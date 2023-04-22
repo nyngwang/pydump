@@ -1,13 +1,11 @@
-# Yup, we need to creat it outside.
-# adv1: aggregate many things into one.
-import textwrap
+
+# NOTE: `TypeGuard` from `typing` is just for type hinting.
 from dataclasses import dataclass
-# this one stop me a while.
-# ok cool so `TypeGuard` from `typing` is just for type hinting.
-
 from typeguard import typechecked
+import textwrap # TIL: built-in
 
 
+# NOTE: class is better to be created outside function.
 @dataclass
 class Item:
     @typechecked
