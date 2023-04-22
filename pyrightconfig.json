@@ -5,5 +5,7 @@
   ],
 
   "venvPath": "/Users/ningwang/miniforge3/envs",
-  "venv": "main"
+  "venv": "main",
+
+  "pythonVersion": "3.11"
 }

@@ -1,8 +1,8 @@
-# Yup, we need to creat it outside
-# adv1: aggregate many things into one
+# Yup, we need to creat it outside.
+# adv1: aggregate many things into one.
 import textwrap
 from dataclasses import dataclass
-from typeguard import 
+# this one stop me a while.
 from typing import (
     Any,
     TypeGuard

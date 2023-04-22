@@ -1,8 +1,8 @@
 {
+  "use_transparent": false,
+  "colorscheme": "ofirkai",
   "tabby": [
     "",
     ""
-  ],
-  "use_transparent": true,
-  "colorscheme": "ofirkai"
+  ]
 }

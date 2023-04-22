@@ -13,11 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +3 main.py
-badd +1 .neoprompt.lua
-badd +5 ~/GitHub/pydump/pydump/courses/yes_oop.py
-badd +1 term://~/GitHub/pydump//34721:/bin/zsh
-badd +3 ~/GitHub/pydump/pyrightconfig.json
+badd +6 main.py
+badd +19 .neoprompt.lua
+badd +18 ~/GitHub/pydump/pydump/courses/yes_oop.py
+badd +7 ~/GitHub/pydump/pyrightconfig.json
+badd +1 term://~/GitHub/pydump//92504:/bin/zsh
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -115,7 +115,7 @@ setlocal imsearch=-1
 setlocal include=
 setlocal includeexpr=tr(v:fname,'.','/')
 setlocal indentexpr=GetLuaIndent()
-setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0=end,0=until
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0=end,0=until
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255,-
 setlocal keywordprg=
@@ -157,7 +157,7 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=noplainbuffer
 setlocal statuscolumn=%!v:lua.StatusCol()
-setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_b_diff_added_command#\ +2\ %#lualine_b_diff_modified_command#~1\ %#lualine_transitional_lualine_b_diff_modified_command_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 63%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 7:1\ \ 
 setlocal suffixesadd=.lua
 setlocal noswapfile
 setlocal synmaxcol=300
@@ -176,7 +176,7 @@ setlocal undolevels=-123456
 setlocal varsofttabstop=
 setlocal vartabstop=
 setlocal virtualedit=
-setlocal winbar=\ .neoprompt.lua\ \ %#NavicSeparator#\ %*%#NavicSeparator#\ \ %*%5@v:lua.navic_click_handler@%#NavicIconsString#\ %*%#NavicText#[\"content\"]%*%X\ 
+setlocal winbar=\ .neoprompt.lua\ \ %#NavicSeparator#\ %*%#NavicSeparator#\ \ %*%#NavicIconsObject#\ %*%#NavicText#[2]%*%#NavicSeparator#\ \ %*%#NavicIconsString#\ %*%#NavicText#[\"content\"]%*\ 
 setlocal winblend=0
 setlocal winhighlight=
 setlocal nowinfixheight
@@ -184,24 +184,26 @@ setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-7,8fold
-5,10fold
-14,32fold
-12,34fold
-38,39fold
-36,41fold
-45,63fold
-43,65fold
-4,66fold
-3,67fold
-2,68fold
+7,9fold
+5,11fold
+15,23fold
+13,25fold
+29,60fold
+27,62fold
+66,81fold
+64,83fold
+87,90fold
+85,92fold
+4,93fold
+3,94fold
+2,95fold
 let &fdl = &fdl
 let s:l = 19 - ((18 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 19
-normal! 03|
+normal! 01|
 wincmd w
 argglobal
 if bufexists(fnamemodify("main.py", ":p")) | buffer main.py | else | edit main.py | endif
@@ -314,7 +316,7 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=noplainbuffer
 setlocal statuscolumn=%!v:lua.StatusCol()
-setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_b_diff_added_command#\ +2\ %#lualine_b_diff_modified_command#~1\ %#lualine_transitional_lualine_b_diff_modified_command_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 63%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 7:1\ \ 
 setlocal suffixesadd=.py
 setlocal noswapfile
 setlocal synmaxcol=300
@@ -342,21 +344,20 @@ setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
 2,4fold
-8,12fold
+8,13fold
 let &fdl = &fdl
-let s:l = 3 - ((2 * winheight(0) + 12) / 24)
+let s:l = 6 - ((5 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
-normal! 011|
+keepjumps 6
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("~/GitHub/pydump/pydump/courses/yes_oop.py", ":p")) | buffer ~/GitHub/pydump/pydump/courses/yes_oop.py | else | edit ~/GitHub/pydump/pydump/courses/yes_oop.py | endif
 if &buftype ==# 'terminal'
   silent file ~/GitHub/pydump/pydump/courses/yes_oop.py
 endif
-balt term://~/GitHub/pydump//51490:/bin/zsh
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <buffer> <expr> <BS> v:lua.MPairs.autopairs_bs()
@@ -462,7 +463,7 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=noplainbuffer
 setlocal statuscolumn=%!v:lua.StatusCol()
-setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_b_diff_added_command#\ +2\ %#lualine_b_diff_modified_command#~1\ %#lualine_transitional_lualine_b_diff_modified_command_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 63%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 7:1\ \ 
 setlocal suffixesadd=.py
 setlocal noswapfile
 setlocal synmaxcol=300
@@ -481,7 +482,7 @@ setlocal undolevels=-123456
 setlocal varsofttabstop=
 setlocal vartabstop=
 setlocal virtualedit=
-setlocal winbar=\ yes_oop.py\ \ 
+setlocal winbar=\ yes_oop.py\ \ %#NavicIconsClass#\ %*%#NavicText#Item%*\ 
 setlocal winblend=0
 setlocal winhighlight=
 setlocal nowinfixheight
@@ -489,20 +490,20 @@ setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-6,8fold
-18,19fold
-23,26fold
-29,32fold
-21,33fold
-13,33fold
-37,44fold
+5,7fold
+17,18fold
+22,25fold
+28,31fold
+20,32fold
+12,32fold
+36,43fold
 let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 12) / 24)
+let s:l = 18 - ((10 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
-normal! 022|
+keepjumps 18
+normal! 015|
 wincmd w
 argglobal
 if bufexists(fnamemodify("~/GitHub/pydump/pyrightconfig.json", ":p")) | buffer ~/GitHub/pydump/pyrightconfig.json | else | edit ~/GitHub/pydump/pyrightconfig.json | endif
@@ -615,7 +616,7 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=noplainbuffer
 setlocal statuscolumn=%!v:lua.StatusCol()
-setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_b_diff_added_command#\ +2\ %#lualine_b_diff_modified_command#~1\ %#lualine_transitional_lualine_b_diff_modified_command_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 63%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 7:1\ \ 
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=300
@@ -634,7 +635,7 @@ setlocal undolevels=-123456
 setlocal varsofttabstop=
 setlocal vartabstop=
 setlocal virtualedit=
-setlocal winbar=\ pyrightconfig.json\ \ %#NavicSeparator#\ %*\ 
+setlocal winbar=\ pyrightconfig.json\ \ 
 setlocal winblend=0
 setlocal winhighlight=
 setlocal nowinfixheight
@@ -643,21 +644,20 @@ setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
 2,4fold
-1,8fold
+1,10fold
 let &fdl = &fdl
-let s:l = 3 - ((2 * winheight(0) + 12) / 25)
+let s:l = 7 - ((6 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
-normal! 015|
+keepjumps 7
+normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("term://~/GitHub/pydump//34721:/bin/zsh", ":p")) | buffer term://~/GitHub/pydump//34721:/bin/zsh | else | edit term://~/GitHub/pydump//34721:/bin/zsh | endif
+if bufexists(fnamemodify("term://~/GitHub/pydump//92504:/bin/zsh", ":p")) | buffer term://~/GitHub/pydump//92504:/bin/zsh | else | edit term://~/GitHub/pydump//92504:/bin/zsh | endif
 if &buftype ==# 'terminal'
-  silent file term://~/GitHub/pydump//34721:/bin/zsh
+  silent file term://~/GitHub/pydump//92504:/bin/zsh
 endif
-balt .neoprompt.lua
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <buffer> <expr> <BS> v:lua.MPairs.autopairs_bs()
@@ -672,7 +672,7 @@ setlocal nobreakindent
 setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
-setlocal buftype=
+setlocal buftype=terminal
 setlocal nocindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
@@ -712,7 +712,7 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=v:lua.require'ufo.main'.foldtext()
 setlocal formatexpr=
-setlocal formatoptions=cqj1t
+setlocal formatoptions=qj1ct
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal formatprg=
 setlocal grepprg=
@@ -763,7 +763,7 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=
 setlocal statuscolumn=
-setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 33%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 3:15\ 
+setlocal statusline=%#lualine_a_normal#\ COMMAND\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_b_normal#\ \ main\ %#lualine_b_diff_added_command#\ +2\ %#lualine_b_diff_modified_command#~1\ %#lualine_transitional_lualine_b_diff_modified_command_to_lualine_c_normal#%<%#lualine_c_normal#\ pyrightconfig.json\ %#lualine_c_normal#%=%#lualine_x_filetype_DevIconJson_command#\ %#lualine_c_normal#\ json\ %#lualine_c_normal#%#lualine_c_normal#\ utf-8\ %#lualine_transitional_lualine_b_normal_to_lualine_c_normal#%#lualine_b_normal#\ 63%%\ %#lualine_transitional_lualine_a_normal_to_lualine_b_normal#%#lualine_a_normal#\ \ \ 7:1\ \ 
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=300
@@ -789,13 +789,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 2 - ((1 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 2
 normal! 0
 wincmd w
 4wincmd w
