@@ -10,6 +10,6 @@ if __name__ == '__main__':
     check_import.all()
 
     # no_oop.without_oop()
-    yes_oop.create_my_class()
-    inherit.create_my_class()
+    yes_oop.main()
+    inherit.main()
 
