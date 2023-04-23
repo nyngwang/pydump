@@ -29,9 +29,9 @@ class Item:
 
     ## Q: how to automate this when defining property (comparing to public field)?
     @property
-    def name(self):
-        return self.__name
-
+    def name(self): return self.__name
+    @name.setter
+    def name(self, value): self.__name = value
 
     @property
     def price(self):
@@ -97,6 +97,7 @@ class Item:
 
 def main():
     item1 = Item('Phone', 1000)
+    item1.name = 'IPhone'
     _compare_before_after_attri_init(item1)
     _get_discount_from_class_attr(item1)
     # item1.name = "hi"
